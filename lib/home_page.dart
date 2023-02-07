@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app_ui_assignment/app_icons.dart';
 import 'package:travel_app_ui_assignment/data.dart';
-import 'package:travel_app_ui_assignment/model/popular_packages.dart';
 import 'package:travel_app_ui_assignment/packages_screen.dart';
-import 'package:travel_app_ui_assignment/popular_package.dart';
+import 'package:travel_app_ui_assignment/section_header.dart';
 
 import 'model/category.dart';
 
@@ -21,175 +20,140 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.only(left: 24, top: 45, right: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-               margin: const EdgeInsets.only(right: 27),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      CircleAvatar(
-                        backgroundColor: Color(0xFFD9D9D9),
-                        radius: 32.0,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Hello, Vineetha')
-                    ],
-                  ),
-                  SvgPicture.asset(
-                    lamp,
-                    height: 24.0,
-                    width: 24.0,
-                  )
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 30.0),
-              child: Text('Where do you\nwant to explore today?'),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color.fromRGBO(0, 0, 0, 0.03),
-                  hintText: 'Search',
-                  hintStyle: const TextStyle(
-                      color: Color.fromRGBO(0, 0, 0, 0.2)),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10.0))),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Row(
+        body: Container(
+      margin: const EdgeInsets.only(left: 24, top: 45, right: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(right: 27),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  'Choose Category',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500, fontSize: 16.0),
-                ),
-                Text(
-                  'See all',
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromRGBO(0, 0, 0, 0.25)),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
               children: [
-                Container(
-                  height: 60,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFF5DC720)),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                    children: const [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage(beachTree),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Beach')
-                    ],
-                  ),
+                Row(
+                  children: const [
+                    CircleAvatar(
+                      backgroundColor: Color(0xFFD9D9D9),
+                      radius: 32.0,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text('Hello, Vineetha')
+                  ],
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  height: 60,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFFDADADA)),
-                      borderRadius: BorderRadius.circular(10)),
-                  // margin: const EdgeInsets.only(right: 21),
-                  child: Row(
-                    children: const [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage(mountainIcon),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Beach')
-                    ],
-                  ),
+                SvgPicture.asset(
+                  lamp,
+                  height: 24.0,
+                  width: 24.0,
                 )
               ],
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 30.0),
+            child: Text('Where do you\nwant to explore today?'),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          TextField(
+            decoration: InputDecoration(
+                filled: true,
+                fillColor: const Color.fromRGBO(0, 0, 0, 0.03),
+                hintText: 'Search',
+                hintStyle: const TextStyle(color: Color.fromRGBO(0, 0, 0, 0.2)),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0))),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SectionHeader(sectionText: 'Choose Category', optionText: 'See all'),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              Container(
+                height: 60,
+                width: 150,
+                decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xFF5DC720)),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: const [
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      backgroundImage: AssetImage(beachTree),
+                    ),
                     SizedBox(
-                      height: 150,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, index) {
-                          Categories category = choosenCategory[index];
-                          return buildCategory(context, category);
-                        },
-                      ),
+                      width: 10,
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 24),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text(
-                            'Popular Package',
-                            style:
-                            TextStyle(fontWeight: FontWeight.w500, fontSize: 16.0),
-                          ),
-                          Text(
-                            'See all',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                                color: Color.fromRGBO(0, 0, 0, 0.25)),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    buildPackages()
+                    Text('Beach')
                   ],
                 ),
               ),
-            )
-          ],
-        ),
-      ));
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                height: 60,
+                width: 150,
+                decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xFFDADADA)),
+                    borderRadius: BorderRadius.circular(10)),
+                // margin: const EdgeInsets.only(right: 21),
+                child: Row(
+                  children: const [
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      backgroundImage: AssetImage(mountainIcon),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text('Beach')
+                  ],
+                ),
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 150,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, index) {
+                        Categories category = choosenCategory[index];
+                        return buildCategory(context, category);
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  SectionHeader(
+                      sectionText: 'Popular Package', optionText: 'See all'),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  buildPackages()
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    ));
   }
 
   Container buildCategory(BuildContext context, Categories category) {
@@ -259,55 +223,65 @@ class _HomePageState extends State<HomePage> {
         onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => PackagesScreen(
+                builder: (context) => PackagesDetailsScreen(
                       packages: packages,
                     ))),
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          margin: const EdgeInsets.only(bottom: 15),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15.0),
               border: Border.all(width: 1.0, color: Colors.grey[200]!)),
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.asset(
-                  packages.imageUrl,
-                   height: 150,
-                   width: 150,
-                  fit: BoxFit.cover,
+          child: Container(
+            margin:
+                const EdgeInsets.symmetric(horizontal: 19.0, vertical: 20.0),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.asset(
+                    packages.imageUrl,
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-              Container (
-                margin: const EdgeInsets.all(12.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      packages.price,
-                      style: const TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.bold),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                   // RatingStars(restaurant.rating),
-                    const SizedBox(
-                      height: 4.0,
-                    ),
-                    Text(
-                      "${packages.rating}",
-                      style: const TextStyle(
-                          fontSize: 16.0, fontWeight: FontWeight.w600),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const SizedBox(
-                      height: 4.0,
-                    ),
-                  ],
-                ),
-              )
-            ],
+                Container(
+                  margin: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        packages.name,
+                        style: const TextStyle(
+                            fontSize: 20.0, fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        '₹${packages.price}',
+                        style: const TextStyle(
+                            fontSize: 20.0, fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      // RatingStars(restaurant.rating),
+                      const SizedBox(
+                        height: 4.0,
+                      ),
+                      Text(
+                        "${packages.rating}",
+                        style: const TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.w600),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(
+                        height: 4.0,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ));
@@ -317,3 +291,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
