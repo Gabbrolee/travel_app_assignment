@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app_ui_assignment/app_icons.dart';
 import 'package:travel_app_ui_assignment/data.dart';
 import 'package:travel_app_ui_assignment/packages_screen.dart';
+import 'package:travel_app_ui_assignment/profile.dart';
 import 'package:travel_app_ui_assignment/section_header.dart';
 
 import 'model/category.dart';
@@ -25,31 +26,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            margin: const EdgeInsets.only(right: 27),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: const [
-                    CircleAvatar(
-                      backgroundColor: Color(0xFFD9D9D9),
-                      radius: 32.0,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Hello, Vineetha')
-                  ],
-                ),
-                SvgPicture.asset(
-                  lamp,
-                  height: 24.0,
-                  width: 24.0,
-                )
-              ],
-            ),
-          ),
+          const Profile(),
           const Padding(
             padding: EdgeInsets.only(top: 30.0),
             child: Text('Where do you\nwant to explore today?'),
@@ -114,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       width: 10,
                     ),
-                    Text('Beach')
+                    Text('Mountains')
                   ],
                 ),
               )
@@ -291,4 +268,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
 
