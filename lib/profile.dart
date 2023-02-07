@@ -24,7 +24,10 @@ class Profile extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
-              Text('Hello, Vineetha')
+              Text(
+                  'Hello, Vineetha',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+              )
             ],
           ),
           SvgPicture.asset(

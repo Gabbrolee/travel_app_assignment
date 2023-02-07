@@ -28,7 +28,10 @@ class _HomePageState extends State<HomePage> {
           const Profile(),
           const Padding(
             padding: EdgeInsets.only(top: 30.0),
-            child: Text('Where do you\nwant to explore today?'),
+            child: Text(
+                'Where do you\nwant to explore today?',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24, fontFamily: 'Poppins'),
+            ),
           ),
           const SizedBox(
             height: 30,
@@ -157,7 +160,8 @@ class _HomePageState extends State<HomePage> {
                     style: const TextStyle(color: Colors.white),
                   )
                 ],
-              )),
+              )
+          ),
         ],
       ),
     );

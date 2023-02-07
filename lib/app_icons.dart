@@ -8,3 +8,4 @@ const kutaIcon = 'images/kuta_kuta.png';
 const locationIcon = 'images/location.png';
 const kutaResortImage = 'images/kuta_resort.png';
 const bugaResortImage = 'images/baga_resort.png';
+const bagaBeach2 = 'images/beachbeach.png';
