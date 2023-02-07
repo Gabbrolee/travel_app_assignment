@@ -1,12 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app_ui_assignment/app_icons.dart';
 import 'package:travel_app_ui_assignment/data.dart';
 import 'package:travel_app_ui_assignment/packages_screen.dart';
 import 'package:travel_app_ui_assignment/profile.dart';
 import 'package:travel_app_ui_assignment/section_header.dart';
 
+import 'category_type.dart';
 import 'model/category.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,49 +51,20 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           Row(
-            children: [
-              Container(
-                height: 60,
-                width: 150,
-                decoration: BoxDecoration(
-                    border: Border.all(color: const Color(0xFF5DC720)),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  children: const [
-                    CircleAvatar(
-                      backgroundColor: Colors.white,
-                      backgroundImage: AssetImage(beachTree),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Beach')
-                  ],
-                ),
+            children: const [
+              CategoryType(
+                color: Color(0xFF5DC720),
+                image: AssetImage(beachTree),
+                text: 'Beach',
               ),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
-              Container(
-                height: 60,
-                width: 150,
-                decoration: BoxDecoration(
-                    border: Border.all(color: const Color(0xFFDADADA)),
-                    borderRadius: BorderRadius.circular(10)),
-                // margin: const EdgeInsets.only(right: 21),
-                child: Row(
-                  children: const [
-                    CircleAvatar(
-                      backgroundColor: Colors.white,
-                      backgroundImage: AssetImage(mountainIcon),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Mountains')
-                  ],
-                ),
-              )
+              CategoryType(
+                color: Color(0xFFDADADA),
+                image: AssetImage(mountainIcon),
+                text: 'Mountains',
+              ),
             ],
           ),
           const SizedBox(
@@ -268,6 +238,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-
