@@ -1,4 +1,4 @@
-import 'package:travel_app_ui_assignment/app_icons.dart';
+import 'package:travel_app_ui_assignment/utilities/app_icons.dart';
 import 'package:travel_app_ui_assignment/model/category.dart';
 import 'package:travel_app_ui_assignment/model/popular_packages.dart';
 

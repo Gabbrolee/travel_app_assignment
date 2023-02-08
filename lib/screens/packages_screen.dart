@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_ui_assignment/app_icons.dart';
+import 'package:travel_app_ui_assignment/utilities/app_icons.dart';
 import 'package:travel_app_ui_assignment/model/category.dart';
 
-import 'model/popular_packages.dart';
+import '../model/popular_packages.dart';
 
 const detailInfo =
     'One of the most happening beaches in Goa, Baga Beach is where you\n will find water sports, fine dining restaurants, bars, and clubs. Situated\n in North Goa, Baga Beach is bordered by Calangute and Anjuna \nBeaches.';

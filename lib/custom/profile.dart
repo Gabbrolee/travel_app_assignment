@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'app_icons.dart';
+import '../utilities/app_icons.dart';
 
 class Profile extends StatelessWidget {
   const Profile({

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_ui_assignment/app_icons.dart';
+import 'package:travel_app_ui_assignment/utilities/app_icons.dart';
 import 'package:travel_app_ui_assignment/data.dart';
-import 'package:travel_app_ui_assignment/packages_screen.dart';
-import 'package:travel_app_ui_assignment/profile.dart';
-import 'package:travel_app_ui_assignment/section_header.dart';
+import 'package:travel_app_ui_assignment/screens/packages_screen.dart';
+import 'package:travel_app_ui_assignment/custom/profile.dart';
+import 'package:travel_app_ui_assignment/custom/section_header.dart';
 
-import 'category_type.dart';
-import 'model/category.dart';
+import '../custom/category_type.dart';
+import '../model/category.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
