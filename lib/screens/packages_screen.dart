@@ -117,7 +117,7 @@ class _PackagesDetailsScreenState extends State<PackagesDetailsScreen> {
               height: 45,
               width: 103,
               decoration: BoxDecoration(
-                color: Color(0xFFFCD240),
+                color: const Color(0xFFFCD240),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: const Center(
